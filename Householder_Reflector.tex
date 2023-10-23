@@ -1,0 +1,35 @@
+\documentclass{standalone}
+% \documentclass[dvisvgm]{minimal}
+% \special{background White}
+
+
+\usepackage{bm}
+\usepackage{tikz}
+\usetikzlibrary{calc} 
+\usetikzlibrary{angles}
+
+\begin{document}
+% \begin{figure}
+%   \centering
+
+\begin{tikzpicture}
+  \draw[->] (-2,0) -- (6,0) node[anchor=north] {$x$};
+  \draw[->] (0,-1) -- (0,6) node[anchor=east] {$y$};
+  \draw[->, thick] (0,0) -- (2,4) coordinate(x) node[anchor=south] {$\bm{x}$};
+  \draw[dashed] (-2,-1) coordinate(p1) --   (8, 4) coordinate (p2) node[right]{range($\bm{P}$)};
+
+  \draw[dashed] (x) -- ($(p1)!(x)!(p2)$) coordinate(px);
+  \draw[->, thick] (0,0) -- (px) node[anchor=north] {$\bm{Px}$};
+  \coordinate (d_px) at ($2*(px)$);
+  \draw[->, thick] (0,0) -- (d_px) node[anchor=south] {$2\bm{Px}$};
+  \draw[->, very thick] (d_px) -- node[anchor = south]{$(\bm{I}-2\bm{P})\bm{x}$} (x);
+  \coordinate (O) at (0,0);
+  \draw (px) pic [draw,angle radius=4mm] {right angle = x--px--O};
+  \draw (O) pic [draw, angle radius=4mm]{angle = px--O--x};
+  \draw (d_px) pic [draw, angle radius=4mm]{angle = x--d_px--px};
+\end{tikzpicture}
+
+%   \caption{Geometric interpretation of $\bm{I}-2{P}$. }
+%   \label{fig:6}
+% \end{figure}
+\end{document}
