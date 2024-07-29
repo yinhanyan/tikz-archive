@@ -7,6 +7,8 @@ Archive of my PGF/TikZ works.
 
 [[![Integration trick for series](images/Integration_Trick_for_Series.svg)]](./Integration_Trick_for_Series.tex)
 
+[[![Integration trick for Stirling's Formula](images/Integration_Trick_for_Stirling.svg)]](./Integration_Trick_for_Stirling.tex)
+
 ## Compile method
 
 ```bash
